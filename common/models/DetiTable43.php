@@ -42,7 +42,7 @@ class DetiTable43 extends \yii\db\ActiveRecord
     {
         return [
             [['field41', 'field42', 'field43', 'field43_1', 'field43_2', 'field43_3', 'field43_4', 'field43_5', 'field43_6', 'field43_7', 'field43_8', 'field43_9', 'field43_10', 'field43_11'], 'required'],
-            [['field41', 'field42', 'field43', 'field43_1', 'field43_2', 'field43_3', 'field43_4', 'field43_5', 'field43_6', 'field43_7', 'field43_8', 'field43_9', 'field43_10', 'field43_11'], 'integer', 'min' => 0, 'max' => 1],
+            [['field41', 'field42', 'field43', 'field43_1', 'field43_2', 'field43_3', 'field43_4', 'field43_5', 'field43_6', 'field43_7', 'field43_8', 'field43_9', 'field43_10', 'field43_11'],  'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

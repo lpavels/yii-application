@@ -32,7 +32,7 @@ class DetiTable26 extends \yii\db\ActiveRecord
     {
         return [
             [['field26', 'field26_1', 'field26_2', 'field26_3', 'field26_4', 'field26_5'], 'required'],
-            [['field26', 'field26_1', 'field26_2', 'field26_3', 'field26_4', 'field26_5'], 'integer', 'min' => 0, 'max' => 1],
+            [['field26', 'field26_1', 'field26_2', 'field26_3', 'field26_4', 'field26_5'], 'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

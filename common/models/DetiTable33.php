@@ -31,7 +31,7 @@ class DetiTable33 extends \yii\db\ActiveRecord
     {
         return [
             [['field33_1', 'field33_2', 'field33_3', 'field33_4'], 'required'],
-            [['field33_1', 'field33_2', 'field33_3', 'field33_4'], 'integer', 'min' => 0, 'max' => 1],
+            [['field33_1', 'field33_2', 'field33_3', 'field33_4'],  'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

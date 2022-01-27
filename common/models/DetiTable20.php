@@ -57,7 +57,7 @@ class DetiTable20 extends \yii\db\ActiveRecord
                     'field20_13',
                     'field20_14',
                 ],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required', 'message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 [
@@ -76,7 +76,7 @@ class DetiTable20 extends \yii\db\ActiveRecord
                     'field20_13',
                     'field20_14',
                 ],
-                'integer', 'min' => 0, 'max' => 1
+                'integer', 'min'=>0, 'max'=>1
             ],
             [['create_at'], 'safe'],
         ];

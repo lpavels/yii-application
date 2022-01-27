@@ -79,7 +79,7 @@ class DirectorTable24 extends \yii\db\ActiveRecord
                     'field24_21',
                     'field24_22'
                 ],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required','message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 [
@@ -109,7 +109,7 @@ class DirectorTable24 extends \yii\db\ActiveRecord
                     'field24_21',
                     'field24_22'
                 ],
-                'integer', 'message' => 'Вносимое значение должно быть числовым'
+                'integer','message'=>'Вносимое значение должно быть числовым'
             ],
             [['create_at'], 'safe'],
         ];

@@ -32,7 +32,7 @@ class DetiTable25 extends \yii\db\ActiveRecord
     {
         return [
             [['field25', 'field25_1', 'field25_2', 'field25_3', 'field25_4', 'field25_5'], 'required'],
-            [['field25', 'field25_1', 'field25_2', 'field25_3', 'field25_4', 'field25_5'], 'integer', 'min' => 0, 'max' => 1],
+            [['field25', 'field25_1', 'field25_2', 'field25_3', 'field25_4', 'field25_5'], 'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

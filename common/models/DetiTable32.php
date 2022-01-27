@@ -34,7 +34,7 @@ class DetiTable32 extends \yii\db\ActiveRecord
     {
         return [
             [['field31', 'field32_1', 'field32_2', 'field32_3', 'field32_4', 'field32_5', 'field32_6'], 'required'],
-            [['field31', 'field32_1', 'field32_2', 'field32_3', 'field32_4', 'field32_5', 'field32_6'], 'integer', 'min' => 0, 'max' => 1],
+            [['field31', 'field32_1', 'field32_2', 'field32_3', 'field32_4', 'field32_5', 'field32_6'], 'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

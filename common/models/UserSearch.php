@@ -29,10 +29,10 @@ class UserSearch extends User
 
     public function search($params)
     {
-        if (Yii::$app->user->can('admin'))
+        if(Yii::$app->user->can('admin'))
         {
 
-            $query = User::find()->where(['application' => 0]);
+                $query = User::find()->where(['application' => 0]);
 
         }
 
@@ -45,8 +45,7 @@ class UserSearch extends User
 
         $this->load($params);
 
-        if (!$this->validate())
-        {
+        if (!$this->validate()) {
             return $dataProvider;
         }
 
@@ -65,10 +64,10 @@ class UserSearch extends User
             ],
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])/*->andFilterWhere(['=', 'id', $this->role])*/
-        ;
-        // ->andFilterWhere(['like', 'recipes_collection_id', $this->recipes_collection_id])
-        // ->andFilterWhere(['like', 'techmup_number', $this->techmup_number]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            /*->andFilterWhere(['=', 'id', $this->role])*/;
+           // ->andFilterWhere(['like', 'recipes_collection_id', $this->recipes_collection_id])
+           // ->andFilterWhere(['like', 'techmup_number', $this->techmup_number]);
 
 
         return $dataProvider;

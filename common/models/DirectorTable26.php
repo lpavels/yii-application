@@ -31,8 +31,8 @@ class DirectorTable26 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'field26_1', 'field26_2', 'field26_3', 'field26_4'], 'required', 'message' => 'Данное поле является обязательным при внесении'],
-            [['user_id', 'field26_1', 'field26_2', 'field26_3', 'field26_4'], 'integer', 'message' => 'Вносимое значение должно быть числовым'],
+            [['user_id', 'field26_1', 'field26_2', 'field26_3', 'field26_4'], 'required','message'=>'Данное поле является обязательным при внесении'],
+            [['user_id', 'field26_1', 'field26_2', 'field26_3', 'field26_4'], 'integer','message'=>'Вносимое значение должно быть числовым'],
             [['create_at'], 'safe'],
         ];
     }

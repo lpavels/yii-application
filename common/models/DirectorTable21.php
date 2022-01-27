@@ -55,7 +55,7 @@ class DirectorTable21 extends \yii\db\ActiveRecord
                     'field21_11',
                     'field21_12',
                 ],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required','message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 [
@@ -73,7 +73,7 @@ class DirectorTable21 extends \yii\db\ActiveRecord
                     'field21_11',
                     'field21_12',
                 ],
-                'integer', 'message' => 'Вносимое значение должно быть числовым'
+                'integer','message'=>'Вносимое значение должно быть числовым'
             ],
             [['create_at'], 'safe'],
         ];

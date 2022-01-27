@@ -45,13 +45,11 @@ class Municipality extends \yii\db\ActiveRecord
         ];
     }
 
-    public function get_region($id)
-    {
+    public function get_region($id){
         return Region::findOne($id)->name;
     }
 
-    public function get_municipality($id)
-    {
+    public function get_municipality($id){
         return Region::findOne($id)->name;
     }
 }

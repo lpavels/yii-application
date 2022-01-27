@@ -33,8 +33,8 @@ class DirectorTable11 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'field11_1', 'field11_2', 'field11_3', 'field11_4', 'field11_5', 'field11_6'], 'required', 'message' => 'Данное поле является обязательным при внесении'],
-            [['user_id', 'field11_1', 'field11_2', 'field11_3', 'field11_4', 'field11_5', 'field11_6'], 'integer', 'message' => 'Вносимое значение должно быть числовым'],
+            [['user_id', 'field11_1', 'field11_2', 'field11_3', 'field11_4', 'field11_5', 'field11_6'], 'required','message'=>'Данное поле является обязательным при внесении'],
+            [['user_id', 'field11_1', 'field11_2', 'field11_3', 'field11_4', 'field11_5', 'field11_6'], 'integer','message'=>'Вносимое значение должно быть числовым'],
             [['create_at'], 'safe'],
         ];
     }

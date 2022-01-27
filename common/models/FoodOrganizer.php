@@ -56,11 +56,11 @@ class FoodOrganizer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['field5_1', 'field5_2', 'field5_3', 'field5_5', 'field5_6', 'field5_7', 'field5_9', 'field5_10', 'field5_11', 'field5_13', 'field5_14', 'field5_15', 'field5_17', 'field5_18', 'field5_19', 'field5_21', 'field5_22', 'field5_23', 'field5_25', 'field5_26', 'field5_27'], 'required', 'message' => 'Обязательное поле'],
-            [['user_id', 'organization_id', 'field5_4', 'field5_8', 'field5_12', 'field5_16', 'field5_20', 'field5_24', 'field5_28'], 'integer'],
-            [['field5_1', 'field5_2', 'field5_3', 'field5_5', 'field5_6', 'field5_7', 'field5_9', 'field5_10', 'field5_11', 'field5_13', 'field5_14', 'field5_15', 'field5_17', 'field5_18', 'field5_19', 'field5_21', 'field5_22', 'field5_23', 'field5_25', 'field5_26', 'field5_27'], 'integer', 'max' => 9999, 'message' => 'Не целое число'],
+            [['field5_1', 'field5_2', 'field5_3', 'field5_5', 'field5_6', 'field5_7', 'field5_9', 'field5_10', 'field5_11', 'field5_13', 'field5_14', 'field5_15', 'field5_17', 'field5_18', 'field5_19', 'field5_21', 'field5_22', 'field5_23', 'field5_25', 'field5_26', 'field5_27'], 'required', 'message'=>'Обязательное поле'],
+            [['user_id', 'organization_id','field5_4', 'field5_8', 'field5_12', 'field5_16', 'field5_20', 'field5_24', 'field5_28'], 'integer'],
+            [['field5_1', 'field5_2', 'field5_3', 'field5_5', 'field5_6', 'field5_7', 'field5_9', 'field5_10', 'field5_11', 'field5_13', 'field5_14', 'field5_15', 'field5_17', 'field5_18', 'field5_19', 'field5_21', 'field5_22', 'field5_23', 'field5_25', 'field5_26', 'field5_27'], 'integer', 'max'=>9999,'message'=>'Не целое число'],
             [['user_id', 'organization_id', 'field5_4', 'field5_8', 'field5_12', 'field5_16', 'field5_20', 'field5_24', 'field5_28', 'created_at'], 'safe'],
-            [['organization_id'], 'unique', 'message' => 'Данная организация уже была выбрана вами или другим организатором питания'],
+            [['organization_id'], 'unique', 'message'=>'Данная организация уже была выбрана вами или другим организатором питания'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['organization_id'], 'exist', 'skipOnError' => true, 'targetClass' => Organization::className(), 'targetAttribute' => ['organization_id' => 'id']],
         ];

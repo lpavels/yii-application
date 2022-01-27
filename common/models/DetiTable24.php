@@ -60,7 +60,7 @@ class DetiTable24 extends \yii\db\ActiveRecord
                     'field24_5',
                     'field24_6',
                 ],
-                'integer', 'min' => 0, 'max' => 1
+                'integer', 'min'=>0, 'max'=>1
             ],
             [['create_at'], 'safe'],
         ];

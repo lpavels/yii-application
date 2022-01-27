@@ -1,5 +1,4 @@
 <?php
-
 namespace common\models;
 
 use Yii;
@@ -51,7 +50,7 @@ class SignupUserForm extends Model
         //$email = User::find()->where(['email' => $this->email])->count();
         //$email = 1;
         //if($email > 0){
-        $this->addError($attribute, 'Пользователь с таким email уже существует');
+            $this->addError($attribute, 'Пользователь с таким email уже существует');
         //}
     }
 
@@ -77,19 +76,18 @@ class SignupUserForm extends Model
      */
     public function signup()
     {
-        if (!$this->validate())
-        {
+        if (!$this->validate()) {
             return null;
         }
-
+        
         $user = new User();
         $user->name = $this->name;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        $user->generateEmailVerificationToken();/* return $user->save() && $this->sendEmail($user)*/;
-        if ($user->save())
-        {
+        $user->generateEmailVerificationToken();
+       /* return $user->save() && $this->sendEmail($user)*/;
+        if ($user->save()) {
             $r = new DbManager();
             $r->init();
             $assign = $r->createRole('user');

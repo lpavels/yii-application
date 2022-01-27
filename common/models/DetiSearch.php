@@ -34,21 +34,16 @@ class DetiSearch extends Deti
 
     public function search($params)
     {
-        if (Yii::$app->user->can('admin'))
-        {
+        if (Yii::$app->user->can('admin')) {
             !empty($params['detiSearch']['federal_district_id']) ? $where = ['user.federal_district_id' => $params['detiSearch']['federal_district_id']] : $where = [];
             !empty($params['detiSearch']['region_id']) ? $where += ['user.region_id' => $params['detiSearch']['region_id']] : $where += [];
             !empty($params['detiSearch']['municipality']) ? $where += ['user.municipality_id' => $params['detiSearch']['municipality']] : $where += [];
-        }
-        elseif (Yii::$app->user->can('rospotrebnadzor'))
-        {
+        } elseif (Yii::$app->user->can('rospotrebnadzor')) {
             $where = [
                 'user.federal_district_id' => Yii::$app->user->identity->federal_district_id,
                 'user.region_id' => Yii::$app->user->identity->region_id,
             ];
-        }
-        else
-        {
+        }else {
             $where = [
                 'user_id' => Yii::$app->user->identity->id,
             ];
@@ -75,8 +70,7 @@ class DetiSearch extends Deti
 
         $this->load($params);
 
-        if (!$this->validate())
-        {
+        if (!$this->validate()) {
             return $dataProvider;
         }
 

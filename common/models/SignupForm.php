@@ -88,13 +88,12 @@ class SignupForm extends Model
         $user->generateEmailVerificationToken();
         $user->generateAuthKey();
 
-        return $user->save() && $this->sendConfirmEmail($user, $org_id);
+        return $user->save() && $this->sendConfirmEmail($user,$org_id);
     }
 
-    protected function sendConfirmEmail($user, $org_id)
+    protected function sendConfirmEmail($user,$org_id)
     {
-        try
-        {
+        try {
             $message = Yii::$app->mailer->compose(
                 ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
                 ['user' => $user])
@@ -102,8 +101,7 @@ class SignupForm extends Model
                 ->setFrom(Yii::$app->params['senderEmail'])
                 ->setSubject('Вы зарегистрированы на сайте anket.demography.site')
                 ->send();
-            if (!$message)
-            {
+            if (!$message){
                 throw new \Swift_TransportException('Письмо недоставлено.');
             }
 
@@ -115,8 +113,7 @@ class SignupForm extends Model
             Yii::$app->session->setFlash('success', 'Спасибо за регистрацию.');
 
             //$this->login($user);
-        } catch (\Swift_TransportException $error)
-        {
+        } catch (\Swift_TransportException $error){
             User::findOne($user->id)->delete();
             Organization::findOne($org_id)->delete();
 
@@ -134,9 +131,9 @@ class SignupForm extends Model
                 ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
                 ['user' => $user]
             )
-            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name.' robot'])
             ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
+            ->setSubject('Account registration at '.Yii::$app->name)
             ->send();
     }
 

@@ -30,8 +30,8 @@ class DirectorTable25 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'field25_1', 'field25_2', 'field25_3'], 'required', 'message' => 'Данное поле является обязательным при внесении'],
-            [['user_id', 'field25_1', 'field25_2', 'field25_3'], 'integer', 'message' => 'Вносимое значение должно быть числовым'],
+            [['user_id', 'field25_1', 'field25_2', 'field25_3'], 'required','message'=>'Данное поле является обязательным при внесении'],
+            [['user_id', 'field25_1', 'field25_2', 'field25_3'], 'integer','message'=>'Вносимое значение должно быть числовым'],
             [['create_at'], 'safe'],
         ];
     }

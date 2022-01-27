@@ -36,15 +36,15 @@ class DirectorTable5 extends \yii\db\ActiveRecord
         return [
             [
                 ['field5_4', 'field5_8'],
-                'required', 'message' => 'Ошибка'
+                'required', 'message'=>'Ошибка'
             ],
             [
                 ['user_id', 'field5_1', 'field5_2', 'field5_3', 'field5_5', 'field5_6', 'field5_7'],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required','message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 ['field5_1', 'field5_2', 'field5_3', 'field5_4', 'field5_5', 'field5_6', 'field5_7', 'field5_8'],
-                'integer', 'message' => 'Вносимое значение должно быть числовым'
+                'integer','message'=>'Вносимое значение должно быть числовым'
             ],
             [['create_at'], 'safe'],
         ];

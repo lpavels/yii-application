@@ -40,7 +40,7 @@ class DetiTable37 extends \yii\db\ActiveRecord
     {
         return [
             [['field34', 'field35', 'field36', 'field37', 'field37_1', 'field37_2', 'field37_3', 'field37_4', 'field37_5', 'field37_6', 'field37_7', 'field37_8', 'field37_9'], 'required'],
-            [['field34', 'field35', 'field36', 'field37', 'field37_1', 'field37_2', 'field37_3', 'field37_4', 'field37_5', 'field37_6', 'field37_7', 'field37_8', 'field37_9'], 'integer', 'min' => 0, 'max' => 1],
+            [['field34', 'field35', 'field36', 'field37', 'field37_1', 'field37_2', 'field37_3', 'field37_4', 'field37_5', 'field37_6', 'field37_7', 'field37_8', 'field37_9'],  'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

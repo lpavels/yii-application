@@ -37,8 +37,38 @@ class FoodTable6 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'field6_1', 'field6_2', 'field6_3', 'field6_4', 'field6_5', 'field6_6', 'field6_7', 'field6_8', 'field6_9', 'field6_10'], 'required'],
-            [['user_id', 'field6_1', 'field6_2', 'field6_3', 'field6_4', 'field6_5', 'field6_6', 'field6_7', 'field6_8', 'field6_9', 'field6_10'], 'integer'],
+            [
+                [
+                    'user_id',
+                    'field6_1',
+                    'field6_2',
+                    'field6_3',
+                    'field6_4',
+                    'field6_5',
+                    'field6_6',
+                    'field6_7',
+                    'field6_8',
+                    'field6_9',
+                    'field6_10',
+                ],
+                'required', 'message'=>'Данное поле является обязательным при внесении'
+            ],
+            [
+                [
+                    'user_id',
+                    'field6_1',
+                    'field6_2',
+                    'field6_3',
+                    'field6_4',
+                    'field6_5',
+                    'field6_6',
+                    'field6_7',
+                    'field6_8',
+                    'field6_9',
+                    'field6_10',
+                ],
+                'integer', 'message'=>'Вносимое значение должно быть числовым'
+            ],
             [['create_at'], 'safe'],
         ];
     }

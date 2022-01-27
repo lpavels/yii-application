@@ -37,27 +37,21 @@ class OrganizationSearch extends Organization
     {
         $post = $params['OrganizationSearch'];
 
-        if (Yii::$app->user->can('admin'))
-        {
+        if (Yii::$app->user->can('admin')) {
             $query = Organization::find();
-        }
-        else
-        {
-            $where = [];
-            if ($post['federal_district_id'])
-            {
+        } else {
+            $where=[];
+            if ($post['federal_district_id']){
                 $where += [
                     'federal_district_id' => $post['federal_district_id'],
                 ];
             }
-            if ($post['region_id'])
-            {
+            if ($post['region_id']){
                 $where += [
                     'region_id' => $post['region_id'],
                 ];
             }
-            if ($post['municipality_id'])
-            {
+            if ($post['municipality_id']){
                 $where += [
                     'municipality_id' => $post['municipality_id'],
                 ];
@@ -71,8 +65,7 @@ class OrganizationSearch extends Organization
         ]);
 
         $this->load($params);
-        if (!$this->validate())
-        {
+        if (!$this->validate()) {
             return $dataProvider;
         }
 
@@ -96,7 +89,8 @@ class OrganizationSearch extends Organization
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['federal_district_id' => $this->federal_district_id])
             ->andFilterWhere(['region_id' => $this->region_id])
-            ->andFilterWhere(['municipality_id' => $this->municipality_id]);
+            ->andFilterWhere(['municipality_id' => $this->municipality_id])
+        ;
 
         return $dataProvider;
     }

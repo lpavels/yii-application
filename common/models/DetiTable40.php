@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property int $field40_1 каши
  * @property int $field40_2 макаронные изделия
- * @property int $field40_3 мясо
+ * @property int $field40_3 мясо 
  * @property int $field40_4 птица
  * @property int $field40_5 рыба
  * @property int $field40_6 колбаса, сосиски, сардельки
@@ -35,7 +35,7 @@ use Yii;
  * @property int $field40_25 чай
  * @property int $field40_26 кофе
  * @property int $field40_27 какао
- * @property int $field40_28 Добавляет ли ребенок сахар в чай?
+ * @property int $field40_28 Добавляет ли ребенок сахар в чай? 
  * @property int $field40_29 Досаливает ли ребенок пищу?
  * @property string $create_at
  */
@@ -56,7 +56,7 @@ class DetiTable40 extends \yii\db\ActiveRecord
     {
         return [
             [['field40_1', 'field40_2', 'field40_3', 'field40_4', 'field40_5', 'field40_6', 'field40_7', 'field40_8', 'field40_9', 'field40_10', 'field40_11', 'field40_12', 'field40_13', 'field40_14', 'field40_15', 'field40_16', 'field40_17', 'field40_18', 'field40_19', 'field40_20', 'field40_21', 'field40_22', 'field40_23', 'field40_24', 'field40_25', 'field40_26', 'field40_27'], 'required'],
-            [['field40_1', 'field40_2', 'field40_3', 'field40_4', 'field40_5', 'field40_6', 'field40_7', 'field40_8', 'field40_9', 'field40_10', 'field40_11', 'field40_12', 'field40_13', 'field40_14', 'field40_15', 'field40_16', 'field40_17', 'field40_18', 'field40_19', 'field40_20', 'field40_21', 'field40_22', 'field40_23', 'field40_24', 'field40_25', 'field40_26', 'field40_27'], 'integer', 'min' => 0, 'max' => 5],
+            [['field40_1', 'field40_2', 'field40_3', 'field40_4', 'field40_5', 'field40_6', 'field40_7', 'field40_8', 'field40_9', 'field40_10', 'field40_11', 'field40_12', 'field40_13', 'field40_14', 'field40_15', 'field40_16', 'field40_17', 'field40_18', 'field40_19', 'field40_20', 'field40_21', 'field40_22', 'field40_23', 'field40_24', 'field40_25', 'field40_26', 'field40_27'],  'integer','min'=>0, 'max'=>5],
             [['create_at'], 'safe'],
         ];
     }

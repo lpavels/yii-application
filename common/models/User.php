@@ -1,5 +1,4 @@
 <?php
-
 namespace common\models;
 
 use Yii;
@@ -124,8 +123,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByPasswordResetToken($token)
     {
-        if (!static::isPasswordResetTokenValid($token))
-        {
+        if (!static::isPasswordResetTokenValid($token)) {
             return null;
         }
 
@@ -141,8 +139,7 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $token verify email token
      * @return static|null
      */
-    public static function findByVerificationToken($token)
-    {
+    public static function findByVerificationToken($token) {
         return static::findOne([
             'verification_token' => $token,
             'status' => self::STATUS_INACTIVE
@@ -157,12 +154,11 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function isPasswordResetTokenValid($token)
     {
-        if (empty($token))
-        {
+        if (empty($token)) {
             return false;
         }
 
-        $timestamp = (int)substr($token, strrpos($token, '_') + 1);
+        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
         $expire = Yii::$app->params['user.passwordResetTokenExpire'];
         return $timestamp + $expire >= time();
     }
@@ -244,39 +240,31 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
-    public function get_organization($organization_id)
-    {
-        if ($organization_id == 0)
-        {
+    public function get_organization($organization_id){
+        if($organization_id == 0){
             return 'Не привязан к организации';
         }
-        else
-        {
+        else{
             $organization = Organization::findOne($organization_id);
             return $organization->title;
         }
     }
 
-    public function get_application($application)
-    {
-        if ($application == 1)
-        {
+    public function get_application($application){
+        if($application == 1){
             return 'Новая заявка';
         }
-        if ($application == 2)
-        {
+        if($application == 2){
             return 'Заявка отклонена';
         }
-        else
-        {
+        else{
             return 'Ошибка определения статуса заявки';
         }
     }
 
-    public function get_date($date)
-    {
+    public function get_date($date){
 
-        return date('d-m-Y H:i', $date);
+            return date('d-m-Y H:i', $date);
 
     }
 
@@ -290,11 +278,10 @@ class User extends ActiveRecord implements IdentityInterface
         }
     }*/
 
-    public function get_role($id)
-    {
+    public function get_role($id){
         $role = AuthAssignment::find()->where(['user_id' => $id])->one();
         $role_russian = AuthItem::find()->where(['name' => $role->item_name])->one()->description;
-        return $role_russian;
+            return $role_russian;
 
     }
 }

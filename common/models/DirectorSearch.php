@@ -34,21 +34,16 @@ class DirectorSearch extends Director
 
     public function search($params)
     {
-        if (Yii::$app->user->can('admin'))
-        {
+        if (Yii::$app->user->can('admin')) {
             !empty($params['DirectorSearch']['federal_district_id']) ? $where = ['user.federal_district_id' => $params['DirectorSearch']['federal_district_id']] : $where = [];
             !empty($params['DirectorSearch']['region_id']) ? $where += ['user.region_id' => $params['DirectorSearch']['region_id']] : $where += [];
             !empty($params['DirectorSearch']['municipality']) ? $where += ['user.municipality_id' => $params['DirectorSearch']['municipality']] : $where += [];
-        }
-        elseif (Yii::$app->user->can('rospotrebnadzor'))
-        {
+        } elseif (Yii::$app->user->can('rospotrebnadzor')) {
             $where = [
                 'user.federal_district_id' => Yii::$app->user->identity->federal_district_id,
                 'user.region_id' => Yii::$app->user->identity->region_id,
             ];
-        }
-        else
-        {
+        }else {
             $where = [
                 'user_id' => Yii::$app->user->identity->id,
             ];
@@ -75,8 +70,7 @@ class DirectorSearch extends Director
 
         $this->load($params);
 
-        if (!$this->validate())
-        {
+        if (!$this->validate()) {
             return $dataProvider;
         }
 
@@ -89,7 +83,7 @@ class DirectorSearch extends Director
             ],
             'sort' => [
                 'defaultOrder' => [
-                    // 'user.federal_district_id' => SORT_DESC,
+                   // 'user.federal_district_id' => SORT_DESC,
                 ],
             ],
         ]);

@@ -94,7 +94,7 @@ class DirectorTable6 extends \yii\db\ActiveRecord
                     'field6_31',
                     'field6_32',
                 ],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required','message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 [
@@ -131,7 +131,7 @@ class DirectorTable6 extends \yii\db\ActiveRecord
                     'field6_31',
                     'field6_32',
                 ],
-                'integer', 'message' => 'Вносимое значение должно быть числовым'
+                'integer','message'=>'Вносимое значение должно быть числовым'
             ],
             [
                 [
@@ -170,7 +170,7 @@ class DirectorTable6 extends \yii\db\ActiveRecord
                 ],
                 'integer',
                 'min' => 0,
-                'max' => 1, 'message' => 'Вносимое значение должно быть числовым'
+                'max' => 1,'message'=>'Вносимое значение должно быть числовым'
             ],
             [['create_at'], 'safe'],
         ];

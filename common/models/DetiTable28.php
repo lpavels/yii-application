@@ -33,8 +33,8 @@ class DetiTable28 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['field27_1', 'field28', 'field28_1', 'field28_2', 'field28_3', 'field28_4', 'field28_5'], 'required'],
-            [['field27_1', 'field28', 'field28_1', 'field28_2', 'field28_3', 'field28_4', 'field28_5'], 'integer', 'min' => 0, 'max' => 1],
+            [['field27_1', 'field28',  'field28_1', 'field28_2', 'field28_3', 'field28_4', 'field28_5'], 'required'],
+            [['field27_1', 'field28',  'field28_1', 'field28_2', 'field28_3', 'field28_4', 'field28_5'], 'integer','min'=>0, 'max'=>1],
             [['create_at'], 'safe'],
         ];
     }

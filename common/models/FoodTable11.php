@@ -9,36 +9,36 @@ use Yii;
  *
  * @property int $id
  * @property int $user_id
- * @property int $field11_1 Молоко Продукция РФ
+ * @property int $field11_1 Молоко Продукция РФ 
  * @property int $field11_2 Молоко в т.ч. местного производства
- * @property int $field11_3 Молоко Импортная продукция
- * @property int $field11_4 Кисломолочная продукция Продукция РФ
+ * @property int $field11_3 Молоко Импортная продукция 
+ * @property int $field11_4 Кисломолочная продукция Продукция РФ 
  * @property int $field11_5 Кисломолочная продукция в т.ч. местного производства
- * @property int $field11_6 Кисломолочная продукция Импортная продукция
- * @property int $field11_7 Творог Продукция РФ
+ * @property int $field11_6 Кисломолочная продукция Импортная продукция 
+ * @property int $field11_7 Творог Продукция РФ 
  * @property int $field11_8 Творог в т.ч. местного производства
- * @property int $field11_9 Творог Импортная продукция
- * @property int $field11_10 Мясо Продукция РФ
+ * @property int $field11_9 Творог Импортная продукция 
+ * @property int $field11_10 Мясо Продукция РФ 
  * @property int $field11_11 Мясо в т.ч. местного производства
- * @property int $field11_12 Мясо Импортная продукция
- * @property int $field11_13 Рыба Продукция РФ
+ * @property int $field11_12 Мясо Импортная продукция 
+ * @property int $field11_13 Рыба Продукция РФ 
  * @property int $field11_14 Рыба в т.ч. местного производства
- * @property int $field11_15 Рыба Импортная продукция
- * @property int $field11_16 Крупы и бобовые Продукция РФ
+ * @property int $field11_15 Рыба Импортная продукция 
+ * @property int $field11_16 Крупы и бобовые Продукция РФ 
  * @property int $field11_17 Крупы и бобовые в т.ч. местного производства
- * @property int $field11_18 Крупы и бобовые Импортная продукция
- * @property int $field11_19 Овощи Продукция РФ
+ * @property int $field11_18 Крупы и бобовые Импортная продукция 
+ * @property int $field11_19 Овощи Продукция РФ 
  * @property int $field11_20 Овощи в т.ч. местного производства
- * @property int $field11_21 Овощи Импортная продукция
- * @property int $field11_22 Картофель Продукция РФ
+ * @property int $field11_21 Овощи Импортная продукция 
+ * @property int $field11_22 Картофель Продукция РФ 
  * @property int $field11_23 Картофель в т.ч. местного производства
- * @property int $field11_24 Картофель Импортная продукция
- * @property int $field11_25 Фрукты Продукция РФ
+ * @property int $field11_24 Картофель Импортная продукция 
+ * @property int $field11_25 Фрукты Продукция РФ 
  * @property int $field11_26 Фрукты в т.ч. местного производства
- * @property int $field11_27 Фрукты Импортная продукция
- * @property int $field11_28 яйца Продукция РФ
+ * @property int $field11_27 Фрукты Импортная продукция 
+ * @property int $field11_28 яйца Продукция РФ 
  * @property int $field11_29 яйца в т.ч. местного производства
- * @property int $field11_30 яйца Импортная продукция
+ * @property int $field11_30 яйца Импортная продукция 
  * @property string $create_at
  */
 class FoodTable11 extends \yii\db\ActiveRecord

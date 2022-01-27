@@ -9,7 +9,6 @@ class ChangeForm extends Model
 {
     public $email;
     private $user_ = false;
-
     /**
      * @return array the validation rules.
      */
@@ -28,41 +27,33 @@ class ChangeForm extends Model
         ];
     }
 
-    public function changePassword()
-    {
-        if ($this->getUser())
-        {
+    public function changePassword(){
+        if($this->getUser()){
             $password = substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, 7);
             $this->user_->setPassword($password);
             $this->user_->generateAuthKey();
-            if ($this->user_->save())
-            {
+            if($this->user_->save()){
 
                 $message = Yii::$app->mailer->compose();
-                $message->setFrom(['registration@niig.su' => 'Восстановление пароля']);
+                $message->setFrom(['registration@niig.su'=>'Восстановление пароля']);
                 $message->setTo($this->email)
                     ->setSubject('Вы сменили пароль от сайта')
-                    ->setHtmlBody('<p><b>Новый пароль: </b>' . $password . '</p>')
-                    ->setTextBody('Новый пароль: ' . $password);
+                    ->setHtmlBody('<p><b>Новый пароль: </b>'.$password.'</p>')
+                    ->setTextBody('Новый пароль: '.$password);
                 $message->send();
 
                 return true;
-            }
-            else
-            {
+            }else{
                 return null;
             }
-        }
-        else
-        {
+        }else{
             return null;
         }
     }
 
     public function getUser()
     {
-        if ($this->user_ === false)
-        {
+        if ($this->user_ === false) {
             $this->user_ = User::findByEmail($this->email);
         }
 

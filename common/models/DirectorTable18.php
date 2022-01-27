@@ -32,8 +32,8 @@ class DirectorTable18 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'field18_1', 'field18_2', 'field18_3', 'field18_4', 'field18_5'], 'required', 'message' => 'Данное поле является обязательным при внесении'],
-            [['user_id', 'field18_1', 'field18_2', 'field18_3', 'field18_4', 'field18_5'], 'integer', 'message' => 'Вносимое значение должно быть числовым'],
+            [['user_id', 'field18_1', 'field18_2', 'field18_3', 'field18_4', 'field18_5'], 'required','message'=>'Данное поле является обязательным при внесении'],
+            [['user_id', 'field18_1', 'field18_2', 'field18_3', 'field18_4', 'field18_5'], 'integer','message'=>'Вносимое значение должно быть числовым'],
             [['create_at'], 'safe'],
         ];
     }

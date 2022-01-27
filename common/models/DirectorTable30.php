@@ -55,7 +55,7 @@ class DirectorTable30 extends \yii\db\ActiveRecord
                     'field30_11',
                     'field30_12',
                 ],
-                'required', 'message' => 'Данное поле является обязательным при внесении'
+                'required','message'=>'Данное поле является обязательным при внесении'
             ],
             [
                 [
@@ -73,7 +73,7 @@ class DirectorTable30 extends \yii\db\ActiveRecord
                     'field30_11',
                     'field30_12',
                 ],
-                'integer', 'message' => 'Вносимое значение должно быть числовым'
+                'integer','message'=>'Вносимое значение должно быть числовым'
             ],
             [
                 [
@@ -81,7 +81,7 @@ class DirectorTable30 extends \yii\db\ActiveRecord
                     'field30_8',
                     'field30_12',
                 ],
-                'validateSum', 'message' => 'Проверьте правильность суммы'
+                'validateSum','message'=>'Проверьте правильность суммы'
             ],
             [['create_at'], 'safe'],
         ];
@@ -122,118 +122,106 @@ class DirectorTable30 extends \yii\db\ActiveRecord
         ];
         //print_r(count($rules_array_sum[$attribute])); exit();
         $sum = 0;
-        for ($i = 0, $count_info = count($rules_array_sum[$attribute]) - 1; $count_info > 0; $count_info--, $i++)
-        {
+        for ($i = 0, $count_info = count($rules_array_sum[$attribute]) - 1; $count_info > 0; $count_info--, $i++) {
             $sum = $sum + $this[$rules_array_sum[$attribute][$i + 1]];
         }
-        switch ($rules_array_sum[$attribute][0])
-        {
+        switch ($rules_array_sum[$attribute][0]) {
             case '==':
-                if ((int)$this->$attribute !== (int)$sum)
-                {
+                if ((int)$this->$attribute !== (int)$sum) {
                     $this->addError(
                         $attribute,
-                        'У Вас ошибка по ' . $rules_array_sum[$attribute][0] . ' выделенных строк;'
+                        'У Вас ошибка по '.$rules_array_sum[$attribute][0].' выделенных строк;'
                     );
                     for (
                         $j = 0, $count_info = count(
                             $rules_array_sum[$attribute]
                         ) - 1; $count_info > 0; $count_info--, $j++
-                    )
-                    {
+                    ) {
                         $this->addError(
                             $rules_array_sum[$attribute][$j + 1],
-                            'Ошибка, проверьте правильность внесения: ' . $this->getAttributeLabel(
+                            'Ошибка, проверьте правильность внесения: '.$this->getAttributeLabel(
                                 $rules_array_sum[$attribute][$j + 1]
-                            ) . ';'
+                            ).';'
                         );
                     }
                 }
                 break;
             case '<=':
-                if ((int)$this->$attribute > (int)$sum)
-                {
+                if ((int)$this->$attribute > (int)$sum) {
                     $this->addError(
                         $attribute,
-                        'У Вас ошибка по ' . $rules_array_sum[$attribute][0] . ' выделенных строк;'
+                        'У Вас ошибка по '.$rules_array_sum[$attribute][0].' выделенных строк;'
                     );
                     for (
                         $j = 0, $count_info = count(
                             $rules_array_sum[$attribute]
                         ) - 1; $count_info > 0; $count_info--, $j++
-                    )
-                    {
+                    ) {
                         $this->addError(
                             $rules_array_sum[$attribute][$j + 1],
-                            'Ошибка, проверьте правильность внесения: ' . $this->getAttributeLabel(
+                            'Ошибка, проверьте правильность внесения: '.$this->getAttributeLabel(
                                 $rules_array_sum[$attribute][$j + 1]
-                            ) . ';'
+                            ).';'
                         );
                     }
                 }
                 break;
             case '<':
-                if ((int)$this->$attribute >= (int)$sum)
-                {
+                if ((int)$this->$attribute >= (int)$sum) {
                     $this->addError(
                         $attribute,
-                        'У Вас ошибка по ' . $rules_array_sum[$attribute][0] . ' выделенных строк;'
+                        'У Вас ошибка по '.$rules_array_sum[$attribute][0].' выделенных строк;'
                     );
                     for (
                         $j = 0, $count_info = count(
                             $rules_array_sum[$attribute]
                         ) - 1; $count_info > 0; $count_info--, $j++
-                    )
-                    {
+                    ) {
                         $this->addError(
                             $rules_array_sum[$attribute][$j + 1],
-                            'Ошибка, проверьте правильность внесения: ' . $this->getAttributeLabel(
+                            'Ошибка, проверьте правильность внесения: '.$this->getAttributeLabel(
                                 $rules_array_sum[$attribute][$j + 1]
-                            ) . ';'
+                            ).';'
                         );
                     }
                 }
                 break;
             case '>':
-                if ((int)$this->$attribute <= (int)$sum)
-                {
+                if ((int)$this->$attribute <= (int)$sum) {
                     $this->addError(
                         $attribute,
-                        'У Вас ошибка по ' . $rules_array_sum[$attribute][0] . ' выделенных строк;'
+                        'У Вас ошибка по '.$rules_array_sum[$attribute][0].' выделенных строк;'
                     );
                     for (
                         $j = 0, $count_info = count(
                             $rules_array_sum[$attribute]
                         ) - 1; $count_info > 0; $count_info--, $j++
-                    )
-                    {
+                    ) {
                         $this->addError(
                             $rules_array_sum[$attribute][$j + 1],
-                            'Ошибка, проверьте правильность внесения: ' . $this->getAttributeLabel(
+                            'Ошибка, проверьте правильность внесения: '.$this->getAttributeLabel(
                                 $rules_array_sum[$attribute][$j + 1]
-                            ) . ';'
+                            ).';'
                         );
                     }
                 }
                 break;
             case '>=':
-                if ((int)$this->$attribute < (int)$sum)
-                {
+                if ((int)$this->$attribute < (int)$sum) {
                     $this->addError(
                         $attribute,
-                        'У Вас ошибка по ' . $rules_array_sum[$attribute][0] . ' выделенных строк;'
+                        'У Вас ошибка по '.$rules_array_sum[$attribute][0].' выделенных строк;'
                     );
                     for (
                         $j = 0, $count_info = count(
                             $rules_array_sum[$attribute]
                         ) - 1; $count_info > 0; $count_info--, $j++
-                    )
-                    {
+                    ) {
                         $this->addError(
                             $rules_array_sum[$attribute][$j + 1],
-                            'Ошибка, проверьте правильность внесения: ' . $this->getAttributeLabel(
+                            'Ошибка, проверьте правильность внесения: '.$this->getAttributeLabel(
                                 $rules_array_sum[$attribute][$j + 1]
-                            ) . ';'
+                            ).';'
                         );
                     }
                 }

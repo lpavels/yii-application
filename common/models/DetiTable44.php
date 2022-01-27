@@ -60,7 +60,7 @@ class DetiTable44 extends \yii\db\ActiveRecord
                     'field44_7',
                     'field44_8',
                 ],
-                'integer', 'min' => 0, 'max' => 1
+                'integer','min'=>0, 'max'=>1
             ],
             [
                 [

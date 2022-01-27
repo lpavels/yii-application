@@ -176,10 +176,10 @@ class Deti extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'organization_id' => 'Организация',
-            'federal_district_id' => 'Федеральный округ',
-            'region_id' => 'Регион',
-            'municipality_id' => 'Муниципальное образование',
+           'organization_id' => 'Организация',
+           'federal_district_id' => 'Федеральный округ',
+           'region_id' => 'Регион',
+           'municipality_id' => 'Муниципальное образование',
             'field1_1' => 'Field1 1',
             'field1_2' => '2. Имя и первая буква фамилии ребенка',
             'field1_3' => '3. Возрастная категория респондента',
@@ -220,11 +220,9 @@ class Deti extends \yii\db\ActiveRecord
             'create_at' => 'Create At',
         ];
     }
-
     public function get_imt2($heightVal, $massVal, $typeKidsVal, $sexVal, $birthVal, $status)
     {
-        if ($heightVal == 0)
-            return '';
+        if ($heightVal == 0) return '';
 
         $imt_arrayVal = [
             'Дефицит массы тела',
@@ -400,26 +398,10 @@ class Deti extends \yii\db\ActiveRecord
             else $arrayChild_temp = $imt_girls_else;
         }
 
-        if ($queteletIndexVal < $arrayChild_temp[$birthVal][0])
-        {
-            $arrayChildNum = 0;
-        }
-        else
-        {
-            if ($queteletIndexVal >= $arrayChild_temp[$birthVal][0] && $queteletIndexVal <= $arrayChild_temp[$birthVal][1])
-            {
-                $arrayChildNum = 1;
-            }
-            else
-            {
-                if ($queteletIndexVal > $arrayChild_temp[$birthVal][1] && $queteletIndexVal <= $arrayChild_temp[$birthVal][2])
-                {
-                    $arrayChildNum = 2;
-                }
-                else if ($queteletIndexVal > $arrayChild_temp[$birthVal][2])
-                    $arrayChildNum = 3;
-            }
-        }
+        if ($queteletIndexVal<$arrayChild_temp[$birthVal][0]) $arrayChildNum = 0;
+        else if ($queteletIndexVal>=$arrayChild_temp[$birthVal][0]&& $queteletIndexVal <= $arrayChild_temp[$birthVal][1]) $arrayChildNum = 1;
+        else if ($queteletIndexVal>$arrayChild_temp[$birthVal][1]&& $queteletIndexVal <= $arrayChild_temp[$birthVal][2]) $arrayChildNum = 2;
+        else if ($queteletIndexVal>$arrayChild_temp[$birthVal][2]) $arrayChildNum = 3;
 
         if ($status == 1)
         {
@@ -428,12 +410,12 @@ class Deti extends \yii\db\ActiveRecord
         if ($status == 2)
         {
             $minRecBodyMass = $arrayChild_temp[$birthVal][0] * (pow($heightVal / 100, 2));
-            return round($minRecBodyMass, 1);
+            return round($minRecBodyMass,1);
         }
         if ($status == 3)
         {
             $maxRecBodyMass = $arrayChild_temp[$birthVal][1] * (pow($heightVal / 100, 2));
-            return round($maxRecBodyMass, 1);
+            return round($maxRecBodyMass,1);
         }
     }
 }
